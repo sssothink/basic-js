@@ -14,12 +14,16 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 
 function getCommonCharacterCount(s1, s2) {
-  let arr = s1.split('');
-  let arr2 = s2.split('');
-  let newArr = arr.concat(arr2);
-  let newNewArr = [...new Set(newArr)];
-  let str = newNewArr.join('');
-  return str.length;
+  let sum = 0;
+  for (let i = 0; i<s1.length; i++) {
+    for (let j = 0; j<s2.length; j++) {
+      if (s1[i] === s2[j]) {
+        sum++;
+        break;
+      }
+    }
+  }
+  return sum;
 };
 
 module.exports = {

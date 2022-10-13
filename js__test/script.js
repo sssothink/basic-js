@@ -32,15 +32,20 @@
 // console.log(test(arr));
 
 function getCommonCharacterCount(s1, s2) {
-    let arr = s1.split('');
-    let arr2 = s2.split('');
-    let newArr = arr.concat(arr2);
-    let newNewArr = [...new Set(newArr)];
-    let str = newNewArr.join('');
-    return str.length;
+    let sum = 0;
+    for (let i = 0; i<s1.length; i++) {
+        for (let j = 0; j<s2.length; j++) {
+            if (s1[i] === s2[j]) {
+                sum++;
+                s2 = s2.replace(j, '');
+                break;
+            }
+        }
+    }
+    return sum;
 };
 
-console.log(getCommonCharacterCount('aabcc', 'adcaa'));
+console.log(getCommonCharacterCount('aa', 'a'));
 
 
 //   console.log(createDreamTeam(['jlivia', 1111, '    Lily', 'Oscar', true, null]));
