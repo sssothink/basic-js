@@ -25,6 +25,8 @@ function dateSample(sampleActivity) {
     return false;
   } else if (sampleActivity <= 0){
     return false;
+  } else if (sampleActivity == 'undefined') {
+    return false;
   } else {
     return false;
   }
